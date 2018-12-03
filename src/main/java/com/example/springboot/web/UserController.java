@@ -19,14 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-//    private static Logger logger=LoggerFactory.getLogger(UserController.class);
     @Autowired
     private UserService userService;
 
     @RequestMapping("/user/{id}")
     public User list(@PathVariable Long id) {
         log.info("{} is 测试日志", id);
-        int a= 4/0;
         return userService.findById(id);
     }
 }
