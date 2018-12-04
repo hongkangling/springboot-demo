@@ -24,7 +24,7 @@ public class UserController {
 
     @RequestMapping("/user/{id}")
     public User list(@PathVariable Long id) {
-        log.info("{} is 测试日志", id);
+        log.info("测试日志");
         return userService.findById(id);
     }
 }
