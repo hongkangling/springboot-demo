@@ -45,7 +45,7 @@
             <level>TRACE</level>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${ROOT_LOGBAK_DIR}.%d{yyyy-MM-dd}/${ALL_LOG_FILE_NAME}-%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+            <fileNamePattern>${ROOT_LOGBAK_DIR}/%d{yyyy-MM-dd}/${ALL_LOG_FILE_NAME}-%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
             <!-- 单个日志文件最多 100MB, 100天的日志周期，最大不能超过1000GB -->
             <maxFileSize>100MB</maxFileSize>
             <maxHistory>100</maxHistory>
@@ -61,7 +61,7 @@
             <level>ERROR</level>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${ROOT_LOGBAK_DIR}.%d{yyyy-MM-dd}/${ALL_LOG_FILE_NAME}-%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+            <fileNamePattern>${ROOT_LOGBAK_DIR}/%d{yyyy-MM-dd}/${ERROR_LOG_FILE_NAME}-%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
             <!-- 单个日志文件最多 100MB, 100天的日志周期，最大不能超过1000GB -->
             <maxFileSize>100MB</maxFileSize>
             <maxHistory>100</maxHistory>
