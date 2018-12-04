@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author linghongkang
  * @description:
@@ -22,8 +24,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findById(Long id) {
-        log.info("测试");
         UserExample userExample = new UserExample();
-        return userMapper.selectByExample(userExample).get(0);
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andUserIdEqualTo(1L);
+        List<User> userList = userMapper.selectByExample(userExample);
+        log.info("total is "+userList.size());
+        return userList.get(0);
     }
 }
