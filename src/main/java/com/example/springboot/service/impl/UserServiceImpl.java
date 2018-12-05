@@ -31,4 +31,11 @@ public class UserServiceImpl implements UserService {
         log.info("total is "+userList.size());
         return userList.get(0);
     }
+
+    @Override
+    public List<User> queryAll() {
+        return userMapper.selectByExample(new UserExample());
+    }
+
+
 }

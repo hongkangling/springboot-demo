@@ -22,6 +22,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <springfox-version>2.7.0</springfox-version>
+        <swagger-core-version>2.0.0-rc2</swagger-core-version>
+        <!--<spring-version>4.3.2.RELEASE</spring-version>-->
     </properties>
 
     <dependencies>
@@ -34,7 +37,11 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>1.3.2</version>
         </dependency>
-
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-webmvc</artifactId>-->
+            <!--<version>${spring-version}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -78,6 +85,22 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>false</optional>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox-version}</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>io.swagger</groupId>-->
+            <!--<artifactId>swagger-core</artifactId>-->
+            <!--<version>${swagger-core-version}</version>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>

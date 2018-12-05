@@ -2,6 +2,8 @@ package com.example.springboot.service;
 
 import com.example.springboot.model.User;
 
+import java.util.List;
+
 /**
  * @author linghongkang
  * @description:
@@ -15,4 +17,8 @@ public interface UserService {
      * @return
      */
     User findById(Long id);
+
+    List<User> queryAll();
+
+
 }
