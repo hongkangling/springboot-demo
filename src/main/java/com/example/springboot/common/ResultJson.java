@@ -1,5 +1,6 @@
 package com.example.springboot.common;
 
+import com.example.springboot.enums.ReturnCodeEnum;
 import lombok.Data;
 
 /**
@@ -23,12 +24,12 @@ public class ResultJson {
         this.data = data;
     }
     public static ResultJson failResult(String msg){
-        return new ResultJson(-1,msg,null);
+        return new ResultJson(ReturnCodeEnum.FAIL.getCode(),msg,null);
     }
     public static ResultJson success(String msg,Object data){
-        return new ResultJson(1,msg,data);
+        return new ResultJson(ReturnCodeEnum.SUCCESS.getCode(),msg,data);
     }
     public static ResultJson success(Object data){
-        return new ResultJson(1,"success",data);
+        return new ResultJson(ReturnCodeEnum.SUCCESS.getCode(),"success",data);
     }
 }
