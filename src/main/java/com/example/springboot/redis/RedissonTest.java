@@ -31,7 +31,7 @@ public class RedissonTest {
         boolean isBlock;
         try {
             // 使用默认租约时间  默认30sL
-            isBlock=redock.tryLock();
+            isBlock=redLock.tryLock();
 
             // 500ms 获取不到锁就失败  10s 锁过期时间
             isBlock = redLock.tryLock(500, 10000,TimeUnit.MILLISECONDS);
