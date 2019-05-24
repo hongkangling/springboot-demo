@@ -19,5 +19,6 @@ public class TestUtils {
         Date now = new Date();
 
         System.out.println((now.getTime()-date.getTime())/(24*60*60*1000)/7*3);
+
     }
 }

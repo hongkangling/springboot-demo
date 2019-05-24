@@ -20,5 +20,5 @@ public interface UserService {
 
     List<User> queryAll();
 
-
+    void  testAsync( List<User>  users);
 }

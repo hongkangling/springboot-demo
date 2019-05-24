@@ -1,0 +1,63 @@
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.example.demo.model
+server:
+  port: 9090
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    druid:
+      aop-patterns: com.example.demo.mapper.*,com.example.demo.service.*，com.example.demo.web.*
+      filter:
+        slf4j:
+          enabled: 'true '
+          result-set-close-after-log-enabled: false
+          result-set-open-after-log-enabled: 'false '
+          statement-close-after-log-enabled: 'false '
+          statement-create-after-log-enabled: 'false '
+        stat:
+          log-slow-sql: true
+          merge-sql: 'true '
+          slow-sql-millis: 20000
+      filters: stat,wall
+      initial-size: 5
+      max-active: 20
+      max-open-prepared-statements: -1
+      max-wait: 60000
+      min-evictable-idle-time-millis: 60000
+      min-idle: 10
+      stat-view-servlet:
+        enabled: true
+        login-password: admin
+        login-username: admin
+        reset-enable: false
+        url-pattern: /druid/*
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      validation-query: SELECT 1
+      validation-query-timeout: 30
+      web-stat-filter:
+        enabled: true
+        exclusions: '*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*'
+        session-stat-enable: true
+        session-stat-max-count: 10
+        url-pattern: /*
+    password: root
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+  devtools:
+    remote:
+      secret: mysecret
+  profiles:
+    active: dev
+regCenter:
+  serverList: localhost:2181
+  namespace: test-job
+  digest: root:root
+simpleJob:
+  cron: 0/5 * * * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=Beijing,1=Shanghai,2=Guangzhou
