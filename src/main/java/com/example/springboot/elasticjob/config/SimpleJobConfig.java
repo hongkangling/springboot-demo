@@ -35,7 +35,7 @@ import javax.annotation.Resource;
 /**
  * @author linghongkang
  */
-@Configuration
+//@Configuration
 public class SimpleJobConfig {
     
     @Resource

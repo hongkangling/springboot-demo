@@ -53,6 +53,18 @@ spring:
       secret: mysecret
   profiles:
     active: dev
+  redis:
+      database: 0
+      host: localhost
+      jedis:
+        pool:
+          max-active: 8
+          max-idle: 8
+          max-wait: -1
+          min-idle: 0
+      password: ''
+      port: 6379
+      timeout: 10000
 regCenter:
   serverList: localhost:2181
   namespace: test-job
