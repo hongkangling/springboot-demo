@@ -65,10 +65,10 @@ spring:
       password: ''
       port: 6379
       timeout: 10000
-regCenter:
-  serverList: localhost:2181
-  namespace: test-job
-  digest: root:root
+#regCenter:
+#  serverList: localhost:2181
+#  namespace: test-job
+#  digest: root:root
 simpleJob:
   cron: 0/5 * * * * ?
   shardingTotalCount: 3

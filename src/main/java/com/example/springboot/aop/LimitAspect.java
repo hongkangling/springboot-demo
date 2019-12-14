@@ -80,7 +80,9 @@ public class LimitAspect {
         if(rateLimit!=null){
             HttpServletRequest request = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder.getRequestAttributes())).getRequest();
             String ipAdrress = IpAdrressUtil.getIpAdrress(request);
-//            if("0.")
+            if("0:0:0:0:0:0:0:1".equals(ipAdrress)){
+                ipAdrress="127.0.0.1";
+            }
             String key=ipAdrress+"_"+target.getName()+ "_"+method.getName()+ "_"+rateLimit.key();
             List<String> list = Collections.singletonList(key);
             Number execute = redisTemplate.execute(redisScript, list, rateLimit.count(), rateLimit.time());
